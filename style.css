@@ -780,3 +780,167 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         width: 80vw; 
     }
 }
+
+
+
+dialog {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#submission-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#submission-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#submission-form input {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#drop-in {
+    background-color: #f8f8f8;
+    text-align: center;
+    line-height: 100px; /* Vertically center the content if there's any */
+    color: #999;
+}
+
+#tags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#tags ul {
+    padding: 0;
+}
+
+#tags li {
+    display: inline;
+    margin-right: 5px;
+    background-color: #e9e9e9;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+#price {
+    font-size: 1.5em;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+#drop-zone:hover {
+    border-color: #aaa;
+}
+
+#drop-zone p {
+    text-align: center;
+    color: #888;
+    font-family: Arial, sans-serif;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    dialog {
+        width: calc(100% - 40px);
+    }
+}
+
+#drop-zone {
+    background-color: #f9f9f9;
+    transition: border .24s ease-in-out;
+    margin-bottom: 30px; /* Add space between file picker and tags */
+}
+
+#drop-zone:hover {
+    border-color: #aaa;
+}
+
+#drop-zone p {
+    text-align: center;
+    color: #888;
+    font-family: Arial, sans-serif;
+}
+
+#tags span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    dialog {
+        width: calc(100% - 40px);
+    }
+}
+
+
+#form-box {
+    max-width: 900px; /* Adjust as needed for your design */
+}
+
+#form-box textarea {
+    height: 100px; /* Adjust as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#form-box input[type="text"],
+#form-box input[type="number"],
+#form-box input[type="date"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#form-box input[type="radio"] {
+    margin-right: 5px;
+}
+
+#form-box button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#form-box button:hover {
+    background-color: #0056b3;
+}
+
+#tags div {
+    margin-bottom: 5px;
+}
+
+#tags button {
+    margin-left: 10px;
+}

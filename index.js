@@ -207,3 +207,81 @@ Bg3.addEventListener('click', () => {
     Bg2.classList.remove('active');
     changeBG();
 });
+
+
+function dropHandler(ev) {
+    console.log("File(s) dropped");
+
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+
+    if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        [...ev.dataTransfer.items].forEach((item, i) => {
+            // If dropped items aren't files, reject them
+            if (item.kind === "file") {
+                const file = item.getAsFile();
+                console.log(`… file[${i}].name = ${file.name}`);
+            }
+        });
+    } else {
+        // Use DataTransfer interface to access the file(s)
+        [...ev.dataTransfer.files].forEach((file, i) => {
+            console.log(`… file[${i}].name = ${file.name}`);
+        });
+    }
+}
+
+var dropZone = document.getElementById('typing-dialog');
+
+
+const createPostInput = document.getElementById("create-post");
+const formBoxDialog = document.getElementById("form-box");
+const cancelButton = document.getElementById("cancel");
+
+// Function to check if the dialog is open
+function openCheck(dialog) {
+    if (dialog.open) {
+        console.log("Dialog open");
+    } else {
+        console.log("Dialog closed");
+    }
+}
+
+// Input event on create-post opens the form-box dialog
+createPostInput.addEventListener("input", () => {
+    if (createPostInput.value.length > 0) {
+        formBoxDialog.showModal();
+        openCheck(formBoxDialog);
+    }
+});
+
+// Assuming you have a cancel button to close the dialog
+
+// Optional: Close the dialog when clicking outside of it
+window.addEventListener('click', function(event) {
+    if (event.target === formBoxDialog) {
+        formBoxDialog.close("actionCancelled");
+        openCheck(formBoxDialog);
+    }
+});
+
+var dropZone = document.getElementById('drop-zone');
+
+dropZone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dropZone.style.borderColor = 'blue';
+}, false);
+
+dropZone.addEventListener('dragleave', function(e) {
+    dropZone.style.borderColor = '#ccc';
+}, false);
+
+dropZone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dropZone.style.borderColor = '#ccc';
+    // Use DataTransfer.files to access the files
+    var files = e.dataTransfer.files;
+    console.log(files);
+    // You can now upload the files using XMLHttpRequest or fetch API
+}, false);
